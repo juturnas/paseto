@@ -25,7 +25,7 @@ failure_derive = "^0.1"
 openssl = { version = "~0.10.24", optional = true }
 ring = { version = "^0.16", features = ["std"] }
 serde_json = { version = "^1.0.0", optional = true }
-sodiumoxide = { version = "^0.2.2", optional = true }
+sodiumoxide = { version = "^0.2.2, <0.2.7", optional = true }
 
 [dev-dependencies]
 hex = "^0.4.0"
