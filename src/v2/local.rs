@@ -45,7 +45,7 @@ pub fn local_paseto(msg: &str, footer: Option<&str>, key: &[u8]) -> Result<Strin
 fn underlying_local_paseto(msg: &str, footer: Option<&str>, nonce_key: &[u8; 24], key: &[u8]) -> Result<String, Error> {
   let footer_frd = footer.unwrap_or("");
 
-  if let Ok(mut state) = GenericHashState::new(24, Some(nonce_key)) {
+  if let Ok(mut state) = GenericHashState::new(Some(24), Some(nonce_key)) {
     if let Ok(_) = state.update(msg.as_bytes()) {
       if let Ok(finalized) = state.finalize() {
         let nonce_bytes = finalized.as_ref();
